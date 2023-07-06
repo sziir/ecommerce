@@ -115,7 +115,7 @@ body {
 
 /* navbar end*/
 
-/* carousel */
+/* carousel  spacial products */
 #carousel-featured {
     background-color: #f7f8f3;
     height: 400px;
@@ -210,6 +210,27 @@ body {
 color: #868686;
 font-size: 38px ;
 }
+/* carousel  spacial products end*/
 
+/* store features */
+#store-features {
+    box-shadow: 0 0 15px #eef0ea;
+    background-image: url(../images/bg_features.png);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -30px;
+    background-size: auto 60%;
+    background-color: #fff;
+    padding-bottom: 35px;
+    padding-top: 25px;
+    background-position: -10px -20px;
+}
 
-/* carousel end*/
+#store-features .feature > img {
+height: 40px;
+margin-bottom: 10px;
+} 
+#store-features .feature+.feature {
+    border-right: 1px solid #eef0ea;
+}
+/* store features end */
