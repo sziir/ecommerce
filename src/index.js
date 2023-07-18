@@ -43,7 +43,7 @@ document.querySelectorAll('[data-product-quantity]').forEach(item => {
         parent.querySelector('.total-price-for-product').innerHTML = newPrice + '$';
 
         //calc total price in all cart item
-        calcToTalPrice()
+        calcToTalPrice();
     });
 });
 
@@ -53,7 +53,7 @@ document.querySelectorAll('[data-remove-from-card]').forEach(item => {
         item.closest('[data-product-info]').remove();
 
         //calc total price in all cart item after delete btn
-        calcToTalPrice()
+        calcToTalPrice();
     });
 });
 function calcToTalPrice() {
@@ -66,7 +66,57 @@ function calcToTalPrice() {
     });
     document.getElementById('total-price-for-all-product').innerHTML = totalPriceForAllProduct;
 }
+const citiesByCountry = {
+    sa: ['الرياض', 'جدة'],
+    eg: ['القاهرة', 'الإسكندرية'],
+    jo: ['عمان', 'الزرقاء'],
+    sy: ['دمشق', 'حلب', 'حماه'],
+};
 
+// update cities with the countries
+document.querySelectorAll('select[name="country"]').forEach(item => {
+    item.addEventListener('change', () => {
+        const country = item.value;
+        const cities = citiesByCountry[country];
+        document.querySelectorAll('#paymentcities option').forEach(option => option.remove());
+
+        const firstOption = document.createElement('option');
+        const optionText = document.createTextNode('اختر المدينة');
+        firstOption.appendChild(optionText);
+        firstOption.setAttribute('value', '');
+        firstOption.setAttribute('disable', 'true');
+        firstOption.setAttribute('selected', 'true');
+
+        const city_options = document.getElementById('paymentcities');
+        city_options.appendChild(firstOption);
+
+        cities.forEach(city => {
+            const newOption = document.createElement('option');
+            const optionText = document.createTextNode(city);
+            newOption.appendChild(optionText);
+            newOption.setAttribute('value', city);
+            city_options.appendChild(newOption);
+        });
+
+    });
+});
+document.querySelectorAll('#form-checkout input[name="payment-method"]').forEach(item => {
+    item.addEventListener('change', () => {
+        const paymentMethod = item.value;
+
+        const creditCardInput = document.querySelectorAll('#credit-card-info');
+
+        if (paymentMethod === 'on-delivery') {
+            creditCardInput.forEach(input => {
+                input.style.display = 'none';
+            });
+        } else {
+            creditCardInput.forEach(input => {
+                input.style.display = 'flex';
+            });
+        }
+    });
+});
 
 
 
