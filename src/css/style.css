@@ -710,11 +710,13 @@ h1.custom-heading {
     outline: none !important;
     transition: all 0.3s ease !important;
 }
+
 .custom-pagination .page-item.active .page-link {
     background-color: #f8ad47 !important;
     color: #fff;
     border-color: #f8ad47;
 }
+
 .custom-pagination .page-link:active,
 .custom-pagination .page-link:focus,
 .custom-pagination .page-link:hover {
@@ -725,8 +727,34 @@ h1.custom-heading {
 
 /* search page end*/
 
+/* contact page */
+#contact-info .custom-icons {
+    color: #f8ad47 !important;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+#contact-info .email-subscription button {
+    border-right: 0px !important;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left: 0 !important;
+}
+
+#contact-info textarea {
+    height: 100px !important;
+
+}
+
+/* contact page end*/
+
 /* maximum */
-@media (max-width: 1399.98px) {}
+@media (max-width: 1399.98px) {
+    #contact-info .email-subscription input {
+        max-width: 71% !important;
+    }
+
+}
 
 @media (max-width: 1199.98px) {
 
@@ -736,6 +764,10 @@ h1.custom-heading {
 
     #carousel-featured .carousel-indicators {
         margin-right: 11%;
+    }
+
+    #contact-info .email-subscription input {
+        max-width: 65% !important;
     }
 }
 
@@ -840,6 +872,16 @@ h1.custom-heading {
         justify-content: center;
         align-items: center;
     }
+
+    #contact-info .email-subscription {
+        min-width: 237%;
+
+    }
+
+    #contact-info .email-subscription input {
+        min-width: 80% !important;
+    }
+
 }
 
 @media (max-width: 767.98px) {
@@ -883,6 +925,15 @@ h1.custom-heading {
 
     .hide-on-small {
         display: none;
+    }
+
+    #contact-info .email-subscription {
+        min-width: 110%;
+
+    }
+
+    #contact-info .email-subscription input {
+        min-width: 80% !important;
     }
 }
 
