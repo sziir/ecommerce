@@ -1,0 +1,15 @@
+$brand-warning: #f8ad47;
+$brand-primary: #53ccd7;
+$brand-danger: #ff3956;
+
+$btn-warning-color-dark: darken($brand-warning,25%);
+$btn-danger-color-dark: darken($brand-danger,25%);
+
+$bg-foundation: #202124;
+$bg-foundation-dark: #000000;
+$bg-foundation-light: lighten($bg-foundation, 10%);
+
+$font-color: #e7e7e7;
+$font-color-dark: darken($font-color, 25%);
+
+$border: #5a5a5a;
